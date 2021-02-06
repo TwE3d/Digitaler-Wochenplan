@@ -34,8 +34,28 @@ addAufgabe("3","3", "Rechnen 2", "Testaufgabe", "http://www.inf.fh-dortmund.de/p
 addAufgabe("4","2", "Erzählen", "", "https://www.webex.com/de/test-meeting.html");
 addAufgabe("4","3", "Klassenrat", "", "https://amongusplay.online/");
 
+function getWochenTag(){
+	switch(new Date().getDay()){
+		case 0: 
+			return 0;
+		case  1:
+			return 0;
+		case 2:
+			return 1;
+		case 3:
+			return 2;
+		case 4:
+			return 3;
+		case 5:
+			return 4;
+		case 6:
+			return 0;
+
+	}
+}
 
 module.exports = {
 	getWoche,
 	addAufgabe,
+	getWochenTag,
 };

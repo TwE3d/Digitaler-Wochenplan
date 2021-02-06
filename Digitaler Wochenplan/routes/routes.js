@@ -12,6 +12,14 @@ module.exports = function(app){
 		});
 	});
 
+	app.get("/tagesplan", function(req, res){
+		res.render("tagesplan",
+		{
+			Woche: wochenplan.getWoche(),
+			Wochentag: wochenplan.getWochenTag()
+		});
+	});
+
 	app.get("/neueAufgabe", function(req, res){
 		res.render("neueAufgabe");
 	});
