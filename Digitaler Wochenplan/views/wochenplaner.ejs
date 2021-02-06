@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <base href="">
+        <link rel="stylesheet" href="/css/grid.css">
+    </head>
+
+    <body>
+        <%- include('./header.ejs')%>
+        <%- include('./nav.ejs')%>
+        <main>
+            <table>
+                <tr>
+                    <th>Stunde</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th>
+                </tr>
+                <tr>
+                    <th>08:30 - 10:05 Uhr</th>
+                    <% for(var i=0;i<5;i++){ %>
+                        <td>
+                            <%if(Woche[i][0].Link!=""){%><a href=<%=Woche[i][0].Link%>><%=Woche[i][0].Name;%></a><%}
+                            else{%><%=Woche[i][0].Name;%><%}%>
+                        </td>
+                    <%}%>
+                </tr>
+                <tr>
+                    <th>10:15 - 11:50 Uhr</th>
+                    <% for(var i=0;i<5;i++){ %>
+                        <td>
+                            <%if(Woche[i][1].Link!=""){%><a href=<%=Woche[i][1].Link%>><%=Woche[i][1].Name;%></a><%}
+                            else{%><%=Woche[i][1].Name;%><%}%>
+                        </td>
+                    <%}%>
+                </tr>
+                <tr>
+                    <th>12:00 - 13:35 Uhr</th>
+                    <% for(var i=0;i<5;i++){ %>
+                        <td>
+                            <%if(Woche[i][2].Link!=""){%><a href=<%=Woche[i][2].Link%>><%=Woche[i][2].Name;%></a><%}
+                            else{%><%=Woche[i][2].Name;%><%}%>
+                        </td>
+                    <%}%>
+                </tr>
+                <tr>
+                    <th>14:10 - 15:00 Uhr</th>
+                    <% for(var i=0;i<5;i++){ %>
+                        <td>
+                            <%if(Woche[i][3].Link!=""){%><a href=<%=Woche[i][3].Link%>><%=Woche[i][3].Name;%></a><%}
+                            else{%><%=Woche[i][3].Name;%><%}%>
+                        </td>
+                    <%}%>
+                </tr>
+                <tr>
+                    <th>15:05 - 15:50 Uhr</th>
+                    <% for(var i=0;i<5;i++){ %>
+                        <td>
+                            <%if(Woche[i][4].Link!=""){%><a href=<%=Woche[i][4].Link%>><%=Woche[i][4].Name;%></a><%}
+                            else{%><%=Woche[i][4].Name;%><%}%>
+                        </td>
+                    <%}%>
+                </tr>
+                <tr>
+                    <th>16:50 - 17:35 Uhr</th>
+                    <% for(var i=0;i<5;i++){ %>
+                        <td>
+                            <%if(Woche[i][5].Link!=""){%><a href=<%=Woche[i][5].Link%>><%=Woche[i][5].Name;%></a><%}
+                            else{%><%=Woche[i][5].Name;%><%}%>
+                        </td>
+                    <%}%>
+                </tr>
+            </table>
+        </main>
+        <%- include('./aside.ejs')%>
+        <%- include('./footer.ejs')%>
+    </body>
+</html>

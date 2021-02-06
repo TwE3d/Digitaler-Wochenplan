@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <base href="">
+        <link rel="stylesheet" href="/css/grid.css">
+    </head>
+
+    <body>
+        <%- include('./header.ejs')%>
+        <%- include('./nav.ejs')%>
+        <main>
+            <form method="POST" action="neueAufgabe">
+                <fieldset>
+                    <legend>Aufgabe:</legend>
+                    <label for="name">Name der Aufgabe:</label>
+                    <input name="aufgabenName" id="name" required>
+                    <label for="wochentag">Wochentag:</label>
+                    <select name="wochentagAuswahl" id ="wochentag">
+                        <option value="0">Montag</option>
+                        <option value="1">Dienstag</option>
+                        <option value="2">Mittwoch</option>
+                        <option value="3">Donnerstag</option>
+                        <option value="4">Freitag</option>
+                    </select>
+                    <label for="slot">Slot:</label>
+                    <select name="slotAuswahl" id ="slot">
+                        <option value="0">8:30 - 10:05 Uhr</option>
+                        <option value="1">10:15 - 11:50 Uhr</option>
+                        <option value="2">12:00 - 13:35 Uhr</option>
+                        <option value="3">14:10 - 15:00 Uhr</option>
+                        <option value="4">15:05 - 15:50 Uhr</option>
+                        <option value="5">16:50 - 17:35 Uhr</option>
+                    </select>
+                    <label for="link">Verlinkung einfügen:</label>
+                    <input type="url" name="linkEingabe" id="link" placeholder="Link zur Aufgabe, Webex, Video etc.">
+                    <label for="beschreibung">Beschreibung eingeben:</label>
+                    <textarea name="beschreibungEingabe" id="beschreibung" placeholder="Beschreibung der Aufgabe"></textarea>
+                    <input type="submit">
+                </fieldset>
+            </form>
+        </main>
+        <%- include('./aside.ejs')%>
+        <%- include('./footer.ejs')%>
+    </body>
+</html>
