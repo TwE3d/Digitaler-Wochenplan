@@ -35,8 +35,12 @@ nav{
 	grid-area: nav;
 }
 
-li{
-	display: inline-block;
+nav ul{
+	display: flex;
+  	flex-flow: row;
+  	justify-content: space-around;
+  	align-items: center;
+  	height: 75%;
 }
 
 header{
@@ -117,6 +121,9 @@ fieldset{
 					"aside"
 					"footer";
 	grid-template-columns:100%;
-	grid-template-rows: 20% 10% 40% 25% 5%;
+	grid-template-rows: 5% 10% 50% 25% 5%;
+	}
+	#maus{
+		display:none;
 	}
 }

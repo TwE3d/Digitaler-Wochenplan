@@ -73,15 +73,21 @@
                     </tr>
                 </table>
             </div>
+            <form method="GET" action="neueAufgabe" id="zeilen/spalten">
+                <input type="hidden" name="zeilennummer" id="zeilennummer">
+                <input type="hidden" name="spaltennummer" id="spaltennummer">
+            </form>
         </main>
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
+
         <script type="text/javascript">
             function klickPosition(td, zeilennummer){
-                console.log("Row Index ist:" + zeilennummer);
-                console.log("Cell Index ist:" + td.cellIndex);
-
-                //Hier Aufruf von URL Funktion, welche auf ANpassen-Seite weiterleitet. Dort muss dann die Vorauswahl getroffen werden. 
+                console.log("Zeilen-Index ist:" + zeilennummer);
+                console.log("Spalten-Index ist:" + td.cellIndex);
+                document.getElementById("zeilennummer").value = zeilennummer;
+                document.getElementById("spaltennummer").value = (td.cellIndex-1);
+                document.getElementById("zeilen/spalten").submit();
             }
         </script>
     </body>

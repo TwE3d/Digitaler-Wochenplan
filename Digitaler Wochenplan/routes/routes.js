@@ -21,7 +21,10 @@ module.exports = function(app){
 	});
 
 	app.get("/neueAufgabe", function(req, res){
-		res.render("neueAufgabe");
+		res.render("neueAufgabe",{
+			zeile: req.query.zeilennummer,
+			spalte: req.query.spaltennummer,
+		});
 	});
 
 	app.post("/neueAufgabe", function(req, res){

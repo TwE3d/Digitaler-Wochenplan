@@ -12,7 +12,7 @@
         <%- include('./header.ejs')%>
         <%- include('./nav.ejs')%>
         <main>
-            <ul>
+            <ul id="tagesplan">
             <%for(var i = 0;i<6;i++){%>
                 <%if(Woche[Wochentag][i].Name!=""){%>
                 <li><%=(i+1)+". Stunde:"%></li>
@@ -23,6 +23,7 @@
                 </ul>
             <%}}%>
             </ul>
+            
         </main>
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
