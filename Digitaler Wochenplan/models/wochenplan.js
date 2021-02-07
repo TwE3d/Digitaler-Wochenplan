@@ -1,4 +1,4 @@
-
+const Datum = new Date();
 var TageContainer = [];
 	for(var tag = 0;tag<5;tag++){
 		TageContainer[tag]=[];
@@ -12,6 +12,7 @@ function Aufgabe(Name, Beschreibung, Link){
 	this.Name = Name;
     this.Beschreibung = Beschreibung;
     this.Link = Link;
+    this.Datum = Datum.getDate()+"."+(Datum.getMonth()+1)+"."+Datum.getFullYear();
 }
 
 function getWoche(){

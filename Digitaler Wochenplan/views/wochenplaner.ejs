@@ -12,65 +12,67 @@
         <%- include('./header.ejs')%>
         <%- include('./nav.ejs')%>
         <main>
-            <table>
-                <tr>
-                    <th>Stunde</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th>
-                </tr>
-                <tr>
-                    <th>08:30 - 10:05 Uhr</th>
-                    <% for(var i=0;i<5;i++){ %>
-                        <td <%if(Woche[i][0].Name==""){%>onclick="klickPosition(this, 0)"<%}%>> <!--Bei Klick auf leeres Element wird Funktion aufgerufen und die Spalten-/Zeilennummer übergeben. Wichtig, damit im Anpassen-Fenster Uhrzeit und Tag schon vorausgewählt sind-->
-                            <%if(Woche[i][0].Link!=""){%><a href=<%=Woche[i][0].Link%>><%=Woche[i][0].Name;%></a><%} <!-- Wenn Link im Objekt hinterlegt, wird ein Anker mit Link erstellt-->
-                            else{%><%=Woche[i][0].Name;%><%}%> <!--Wenn kein Link hinterlegt, wird nur der Name eingefügt-->
-                        </td>
-                    <%}%>
-                </tr>
-                <tr>
-                    <th>10:15 - 11:50 Uhr</th>
-                    <% for(var i=0;i<5;i++){ %>
-                        <td <%if(Woche[i][1].Name==""){%>onclick="klickPosition(this, 1)"<%}%>>
-                            <%if(Woche[i][1].Link!=""){%><a href=<%=Woche[i][1].Link%>><%=Woche[i][1].Name;%></a><%}
-                            else{%><%=Woche[i][1].Name;%><%}%>
-                        </td>
-                    <%}%>
-                </tr>
-                <tr>
-                    <th>12:00 - 13:35 Uhr</th>
-                    <% for(var i=0;i<5;i++){ %>
-                        <td <%if(Woche[i][2].Name==""){%>onclick="klickPosition(this, 2)"<%}%>>
-                            <%if(Woche[i][2].Link!=""){%><a href=<%=Woche[i][2].Link%>><%=Woche[i][2].Name;%></a><%}
-                            else{%><%=Woche[i][2].Name;%><%}%>
-                        </td>
-                    <%}%>
-                </tr>
-                <tr>
-                    <th>14:10 - 15:00 Uhr</th>
-                    <% for(var i=0;i<5;i++){ %>
-                        <td <%if(Woche[i][3].Name==""){%>onclick="klickPosition(this, 3)"<%}%>>
-                            <%if(Woche[i][3].Link!=""){%><a href=<%=Woche[i][3].Link%>><%=Woche[i][3].Name;%></a><%}
-                            else{%><%=Woche[i][3].Name;%><%}%>
-                        </td>
-                    <%}%>
-                </tr>
-                <tr>
-                    <th>15:05 - 15:50 Uhr</th>
-                    <% for(var i=0;i<5;i++){ %>
-                        <td <%if(Woche[i][4].Name==""){%>onclick="klickPosition(this, 4)"<%}%>>
-                            <%if(Woche[i][4].Link!=""){%><a href=<%=Woche[i][4].Link%>><%=Woche[i][4].Name;%></a><%}
-                            else{%><%=Woche[i][4].Name;%><%}%>
-                        </td>
-                    <%}%>
-                </tr>
-                <tr>
-                    <th>16:50 - 17:35 Uhr</th>
-                    <% for(var i=0;i<5;i++){ %>
-                        <td <%if(Woche[i][5].Name==""){%>onclick="klickPosition(this, 5)"<%}%>>
-                            <%if(Woche[i][5].Link!=""){%><a href=<%=Woche[i][5].Link%>><%=Woche[i][5].Name;%></a><%}
-                            else{%><%=Woche[i][5].Name;%><%}%>
-                        </td>
-                    <%}%>
-                </tr>
-            </table>
+            <div id="tableWrapper">
+                <table>
+                    <tr>
+                        <th>Stunde</th><th>Montag</th><th>Dienstag</th><th>Mittwoch</th><th>Donnerstag</th><th>Freitag</th>
+                    </tr>
+                    <tr>
+                        <th>08:30 - 10:05 Uhr</th>
+                        <% for(var i=0;i<5;i++){ %>
+                            <td <%if(Woche[i][0].Name==""){%>onclick="klickPosition(this, 0)"<%}%>> <!--Bei Klick auf leeres Element wird Funktion aufgerufen und die Spalten-/Zeilennummer übergeben. Wichtig, damit im Anpassen-Fenster Uhrzeit und Tag schon vorausgewählt sind-->
+                                <%if(Woche[i][0].Link!=""){%><a href=<%=Woche[i][0].Link%>><%=Woche[i][0].Name;%></a><%} <!-- Wenn Link im Objekt hinterlegt, wird ein Anker mit Link erstellt-->
+                                else{%><%=Woche[i][0].Name;%><%}%> <!--Wenn kein Link hinterlegt, wird nur der Name eingefügt-->
+                            </td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <th>10:15 - 11:50 Uhr</th>
+                        <% for(var i=0;i<5;i++){ %>
+                            <td <%if(Woche[i][1].Name==""){%>onclick="klickPosition(this, 1)"<%}%>>
+                                <%if(Woche[i][1].Link!=""){%><a href=<%=Woche[i][1].Link%>><%=Woche[i][1].Name;%></a><%}
+                                else{%><%=Woche[i][1].Name;%><%}%>
+                            </td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <th>12:00 - 13:35 Uhr</th>
+                        <% for(var i=0;i<5;i++){ %>
+                            <td <%if(Woche[i][2].Name==""){%>onclick="klickPosition(this, 2)"<%}%>>
+                                <%if(Woche[i][2].Link!=""){%><a href=<%=Woche[i][2].Link%>><%=Woche[i][2].Name;%></a><%}
+                                else{%><%=Woche[i][2].Name;%><%}%>
+                            </td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <th>14:10 - 15:00 Uhr</th>
+                        <% for(var i=0;i<5;i++){ %>
+                            <td <%if(Woche[i][3].Name==""){%>onclick="klickPosition(this, 3)"<%}%>>
+                                <%if(Woche[i][3].Link!=""){%><a href=<%=Woche[i][3].Link%>><%=Woche[i][3].Name;%></a><%}
+                                else{%><%=Woche[i][3].Name;%><%}%>
+                            </td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <th>15:05 - 15:50 Uhr</th>
+                        <% for(var i=0;i<5;i++){ %>
+                            <td <%if(Woche[i][4].Name==""){%>onclick="klickPosition(this, 4)"<%}%>>
+                                <%if(Woche[i][4].Link!=""){%><a href=<%=Woche[i][4].Link%>><%=Woche[i][4].Name;%></a><%}
+                                else{%><%=Woche[i][4].Name;%><%}%>
+                            </td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <th>16:50 - 17:35 Uhr</th>
+                        <% for(var i=0;i<5;i++){ %>
+                            <td <%if(Woche[i][5].Name==""){%>onclick="klickPosition(this, 5)"<%}%>>
+                                <%if(Woche[i][5].Link!=""){%><a href=<%=Woche[i][5].Link%>><%=Woche[i][5].Name;%></a><%}
+                                else{%><%=Woche[i][5].Name;%><%}%>
+                            </td>
+                        <%}%>
+                    </tr>
+                </table>
+            </div>
         </main>
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
