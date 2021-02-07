@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
-        <title></title>
+        <title>Aufgabe anlegen</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8">
         <base href="">
@@ -46,10 +46,10 @@
         <%console.log(spalte)%>
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
-        <script type="text/javascript">
+        <script>
             console.log(<%=zeile%>);
             console.log(<%=spalte%>);
-            if(<%=zeile%>||<%=spalte%>){
+            if(<%=zeile%>!=undefined){
                 document.getElementById("wochentag").value = <%=spalte%>;
                 document.getElementById("slot").value = <%=zeile%>;
             }
