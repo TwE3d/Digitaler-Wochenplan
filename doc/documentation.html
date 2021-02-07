@@ -6,18 +6,90 @@
   </head>
   <body>
     <h1>Dokumenation</h1>
-	    <h2>1. Beschreibung des Anwendungsszenarios</h2>
-	    <h2>2. Fachobjekte der Anwendung</h2>
-	    <h2>3. Beschreibung und Begründung der Implementierungsentscheidungen</h2>
-		    <h3>3.1 Client</h3>
-		    	<h4>3.1.1 Strukturierung der HTML-Seiten</h4>
-		    	<h4>3.1.2 Layout</h4>
-		    	<h4>3.1.3 Responsivität</h4>
-		    <h3>3.2 Server</h3>
-		    	<h4>3.2.1 Modulstruktur</h4>
-		    	<h4>3.2.2 Unterstützte URLs/Endpunkte</h4>
-		<h2>4. Start der Anwendung</h2>
-		<h2>5. Autorenschaft der Quellcode-Dateien</h2>
+    	<article>
+    		<header>
+    			<h2>1. Beschreibung des Anwendungsszenarios</h2>
+    		</header>
+    		<section>
+    			<p>In der vorliegenden Hausarbeit wurde eine Lösung für das Problem in Zeiten der digitalen Bildung angegangen, dass egal ob in der Grundschule, der Sekundarschule oder der FH die Organisation über mehrere Plattform verteilt stattfindet. Mit der entwickelten Anwendung wird ein zentraler Ort entwickelt, in welchem ein konfigurierbarer Wochenplan mit dahinterliegenden Links erstellt werden kann. Dies soll vorallem jüngeren Schülern dabei helfen, die Übersicht zu behalten und sich zurechtzufinden.</p>
+    		</section>
+    	</article>
+	    
+	    <article>
+    		<header>
+    			<h2>2. Fachobjekte der Anwendung</h2>
+    		</header>
+    		<section>
+    			Zur Realisierung des Stundenplans wurde ein zweidimensionales Array erstellt. Die erste Ebene des Arrays repräsentiert hierbei die Tage. Pro Tag wird dann ein weiteres Array erstellt, welches die späteren Zeitslots darstellt. 
 
+    			In diesen Zeitslots wird dann ein über die Konstruktorfunktion Aufgabe erstelltes Objekt gespeichert. 
+
+    			Die Konstruktorfunktion Aufgabe besitzt 4 Attribute, wobei die folgenden Drei als übergebener Paramter erwartet werden.
+    			Der Name der Aufgabe, die Beschreibung und ein Link, welcher beispielsweise zu einem Webex-Raum oder einem Lernvideo führt.
+    			Das vierte Attribut, Datum, wird auf das aktuelle Datum gesetzt, an welchem die Aufgabe erstellt wurde.
+
+    			Damit aus der Anwendung heraus später neue Aufgaben erstellt bzw. alte überschrieben werden können, wurde die Methode addAufgabe implementiert. Diese erwartet neben den notwendigen Paramtern für die Aufgabe die beiden Paramter Tag und Slot.
+    			Der Tag ist eine Zahl, welche die Position in der ersten Ebene des zweidimensionalen Arrays und somit den Tag repräsentiert.
+    			Der Slot ist eine Zahl, welche die Position in der zweiten Ebene und den Zeitslot wiederspiegelt.
+    		</section>
+    	</article>
+
+    	<article>
+    		<header>
+    			<h2>3. Beschreibung und Begründung der Implementierungsentscheidungen</h2>
+    		</header>
+    		<section>
+    			<h3>3.1 Client</h3>
+    			<section>
+    				<h4>3.1.1 Strukturierung der HTML-Seiten</h4>
+    				<p>
+    					In der Anwendung gibt es die drei HTML-Seiten Wochenplaner, Tagesplan und neueAufgabe.
+    					Die Wochenplaner-Seite ist die Landing-Page, welche beim beim Aufruf ohne Angabe eines Pfades aufgerufen wird. Auf dieser Seite wird der Wochenplaner angezeigt und dynamisch die einzelnen Fachobjekte reingeladen. Wenn im Fachobjekt ein Link angegeben wurde, kann über einen Klick auf den Namen der Aufgabe direkt auf die verlinkte Website zugegriffen werden. Falls auf ein leeres Feld geklickt wird, gelangt man automatisch auf die Anpassen-Seite, dazu später mehr.
+    					Die Tagesplan-Seite stellt die Aufgaben hierbei detaillierter mit einer Anzeige der Beschreibung dar. Der aktuelle Tag wird per Javascript ermittelt und nur die Aufgaben für den aktuellen Tag dynamisch eingeblendet.
+    					Die neueAufgabe-Seite dient zum Erstellen einer neuen Aufgabe. Der Titel der Aufgabe ist hierbei erforderlich und der Link muss verpflichtend vom Typ URL sein. Damit die Position im Wochenplan feststeht, ist ein Dropdown-Menü mit den Tagen und den Zeitslots vorhanden. Falls im Wochenplaner auf ein leeres Feld geklickt wurde, erhält die neueAufgabe-Seite über GET-Parameter den ausgewählten Tag- und Zeitslot übergeben und wählt diese als Vorauswahl aus. Diese Funktion wurde über ein verstecktes FORM auf der Wochenplaner-Seite und per DOM-Manipulation der neueAufgabe-Seite gelöst.
+    				</p>
+    			</section>
+    			<section>
+    				<h4>3.1.2 Layout</h4>
+    				<p>
+    					Als Grundstruktur des Layouts wurde Grid verwendet, durch die Verwndung der Struktur auf allen drei Seiten entsteht eine einheitliche Optik.
+    					Es wurden hierbei die Areas header, nav, main, aside und footer definiert. header beinhaltet ein Logo mit dem Titel der Anwendung, nav die Navigation zwischen den drei Seiten. Aside zeigt zeigt Zusatzinformationen wie beispielsweise einem Link zur FH-Seite an, der footer den Urheber der Website. Der Hauptinhalt der jeweiligen Seiten wird in der main-Area dargestellt.
+    					Im oberen linken Teil der Anwendung wurde hierbei der header platziert, rechts davon der nav-Bereich.
+    					In der Mitte der Website steht dann auf 2/3 der main-Inhalt, auf dem Rest die Zusatzinformationen der aside.
+    					Im unteren Teil wurde ein kleiner footer platziert.
+    				</p>
+    			</section>
+    			<section>
+    				<h4>3.1.3 Responsivität</h4>
+    				<p>
+    					Für eine gute Responsivität wurde ein Breakpoint bei einer Breite des Fensters unter 768 Pixeln erstellt.
+    					Wenn diese Regel eintritt, werden Teile wie der header und der nav sowie der main und aside nicht mehr nebeneinander, sondern untereinander dargestellt. Dies ermöglicht eine bessere Navigation auch auf kleineren Displays.
+    				</p>
+    			</section>
+    		</section>
+    		<section>
+    			<h3>3.2 Server</h3>
+    			<section>
+    				<h4>3.2.1 Modulstruktur</h4>
+    			</section>
+    			<section>
+    				<h4>3.2.2 Unterstützte URLs/Endpunkte</h4>
+    			</section>
+    		</section>
+    	</article>
+
+		<article>
+    		<header>
+    			<h2>4. Start der Anwendung</h2>
+    		</header>
+    		<section></section>
+    	</article>
+
+    	<article>
+    		<header>
+    			<h2>5. Autorenschaft der Quellcode-Dateien</h2>
+    		</header>
+    		<section></section>
+    	</article>
   </body>
 </html>
