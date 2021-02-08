@@ -7,7 +7,6 @@
         <base href="">
         <link rel="stylesheet" href="/css/grid.css">
     </head>
-
     <body>
         <%- include('./header.ejs')%>
         <%- include('./nav.ejs')%>
@@ -42,13 +41,9 @@
                 </fieldset>
             </form>
         </main>
-        <%console.log(zeile)%>
-        <%console.log(spalte)%>
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
         <script>
-            console.log(<%=zeile%>);
-            console.log(<%=spalte%>);
             if(<%=zeile%>!=undefined){
                 document.getElementById("wochentag").value = <%=spalte%>;
                 document.getElementById("slot").value = <%=zeile%>;

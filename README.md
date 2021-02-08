@@ -4,4 +4,4 @@ Digitaler Wochenplan zur Erstellung einer Sammlung von Links, damit Grundschüle
 Als Backend dienen EJS und Node, als Datenhaltung zu Testzwecken Javascript.
 
 Funktionen ToDo:
-- Tagesansicht ausbauen. Bei Overflow scrollbalken implementieren, Sicht und Breakpoint prüfen
+- Aside: Foto von Lehrer mit Kontaktmailadresse

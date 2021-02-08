@@ -7,7 +7,6 @@
         <base href="">
         <link rel="stylesheet" href="/css/grid.css">
     </head>
-
     <body>
         <%- include('./header.ejs')%>
         <%- include('./nav.ejs')%>
@@ -80,11 +79,8 @@
         </main>
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
-
         <script type="text/javascript">
             function klickPosition(td, zeilennummer){
-                console.log("Zeilen-Index ist:" + zeilennummer);
-                console.log("Spalten-Index ist:" + td.cellIndex);
                 document.getElementById("zeilennummer").value = zeilennummer;
                 document.getElementById("spaltennummer").value = (td.cellIndex-1);
                 document.getElementById("zeilen/spalten").submit();
