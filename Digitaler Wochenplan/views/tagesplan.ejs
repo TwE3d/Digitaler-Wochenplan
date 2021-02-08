@@ -15,12 +15,13 @@
             <ul id="tagesplan">
             <%for(var i = 0;i<6;i++){%>
                 <%if(Woche[Wochentag][i].Name!=""){%> <!--Nur existierende Aufgaben werden angezeigt, Name required-->
-                <li><%=(i+1)+". Stunde:"%></li>
-                <ul>
-                    <li>Name:<a href="<%=Woche[Wochentag][i].Link%>"><%=Woche[Wochentag][i].Name%></a></li>
-                    <li><%="Erklärung:"+Woche[Wochentag][i].Beschreibung%></li>
-                    <li><%="Erstellt am:"+Woche[Wochentag][i].Datum%></li>
-                </ul>
+                <li><%=(i+1)+". Stunde:"%>
+                    <ul>
+                        <li>Name:<a href="<%=Woche[Wochentag][i].Link%>"><%=Woche[Wochentag][i].Name%></a></li>
+                        <li><%="Erklärung:"+Woche[Wochentag][i].Beschreibung%></li>
+                        <li><%="Erstellt am:"+Woche[Wochentag][i].Datum%></li>
+                    </ul>
+                </li>
             <%}}%>
             </ul>
             

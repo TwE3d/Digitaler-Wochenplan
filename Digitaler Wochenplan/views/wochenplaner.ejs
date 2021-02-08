@@ -29,7 +29,7 @@
                         <th>10:15 - 11:50 Uhr</th>
                         <% for(var i=0;i<5;i++){ %>
                             <td <%if(Woche[i][1].Name==""){%>onclick="klickPosition(this, 1)"<%}%>>
-                                <%if(Woche[i][1].Link!=""){%><a href=<%=Woche[i][1].Link%>><%=Woche[i][1].Name;%></a><%}
+                                <%if(Woche[i][1].Link!=""){%><a href="<%=Woche[i][1].Link%>"><%=Woche[i][1].Name;%></a><%}
                                 else{%><%=Woche[i][1].Name;%><%}%>
                             </td>
                         <%}%>
@@ -38,7 +38,7 @@
                         <th>12:00 - 13:35 Uhr</th>
                         <% for(var i=0;i<5;i++){ %>
                             <td <%if(Woche[i][2].Name==""){%>onclick="klickPosition(this, 2)"<%}%>>
-                                <%if(Woche[i][2].Link!=""){%><a href=<%=Woche[i][2].Link%>><%=Woche[i][2].Name;%></a><%}
+                                <%if(Woche[i][2].Link!=""){%><a href="<%=Woche[i][2].Link%>"><%=Woche[i][2].Name;%></a><%}
                                 else{%><%=Woche[i][2].Name;%><%}%>
                             </td>
                         <%}%>
@@ -47,7 +47,7 @@
                         <th>14:10 - 15:00 Uhr</th>
                         <% for(var i=0;i<5;i++){ %>
                             <td <%if(Woche[i][3].Name==""){%>onclick="klickPosition(this, 3)"<%}%>>
-                                <%if(Woche[i][3].Link!=""){%><a href=<%=Woche[i][3].Link%>><%=Woche[i][3].Name;%></a><%}
+                                <%if(Woche[i][3].Link!=""){%><a href="<%=Woche[i][3].Link%>"><%=Woche[i][3].Name;%></a><%}
                                 else{%><%=Woche[i][3].Name;%><%}%>
                             </td>
                         <%}%>
@@ -56,7 +56,7 @@
                         <th>15:05 - 15:50 Uhr</th>
                         <% for(var i=0;i<5;i++){ %>
                             <td <%if(Woche[i][4].Name==""){%>onclick="klickPosition(this, 4)"<%}%>>
-                                <%if(Woche[i][4].Link!=""){%><a href=<%=Woche[i][4].Link%>><%=Woche[i][4].Name;%></a><%}
+                                <%if(Woche[i][4].Link!=""){%><a href="<%=Woche[i][4].Link%>"><%=Woche[i][4].Name;%></a><%}
                                 else{%><%=Woche[i][4].Name;%><%}%>
                             </td>
                         <%}%>
@@ -65,7 +65,7 @@
                         <th>16:50 - 17:35 Uhr</th>
                         <% for(var i=0;i<5;i++){ %>
                             <td <%if(Woche[i][5].Name==""){%>onclick="klickPosition(this, 5)"<%}%>>
-                                <%if(Woche[i][5].Link!=""){%><a href=<%=Woche[i][5].Link%>><%=Woche[i][5].Name;%></a><%}
+                                <%if(Woche[i][5].Link!=""){%><a href="<%=Woche[i][5].Link%>"><%=Woche[i][5].Name;%></a><%}
                                 else{%><%=Woche[i][5].Name;%><%}%>
                             </td>
                         <%}%>
@@ -79,7 +79,7 @@
         </main>
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
-        <script type="text/javascript">
+        <script>
             function klickPosition(td, zeilennummer){ //Funktion, um Zeilennummer und Spaltennummer bei Klick auf Wochenplan herauszukriegen und an /neueAufgabe zu übergeben. Am Ende werden die Nummern in das Hidden Form eingefügt und submittet
                 document.getElementById("zeilennummer").value = zeilennummer;
                 document.getElementById("spaltennummer").value = (td.cellIndex-1);

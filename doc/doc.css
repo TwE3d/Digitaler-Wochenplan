@@ -9,3 +9,26 @@ article{
 	padding-bottom: 6px;
 	border:thin solid #000000;
 }
+
+table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	margin-left: 25px;
+	font-size: 0.9em;
+	box-shadow: 0 0 20px rgba(0,0,0,0.15);
+	table-layout:fixed;
+    width:auto;
+    height: 100%;
+}
+
+
+
+table td{
+	border:thin solid #000000;
+    text-align: center; 
+}
+
+table tr th{
+	border-right: thin solid #000000;
+	border-bottom: thin solid #000000;
+}
