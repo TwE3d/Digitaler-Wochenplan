@@ -4,3 +4,4 @@ Digitaler Wochenplan zur Erstellung einer Sammlung von Links, damit Grundschüle
 Als Backend dienen EJS und Node, als Datenhaltung zu Testzwecken Javascript.
 
 Funktionen ToDo:
+Cursor Hover ändern

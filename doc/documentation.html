@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="doc.css">
   </head>
   <body>
+    <a href=""><img src="../Digitaler Wochenplan/public/img/maus.jpg" alt="Abbildung" width="120" height="120" id="maus" style="float:right;width:42px;height:42px";></a>
     <h1>Dokumenation</h1>
-    	<article>
+        <article>
     		<header>
     			<h2>1. Beschreibung des Anwendungsszenarios</h2>
     		</header>
@@ -54,17 +55,18 @@
     				<h4>3.1.2 Layout</h4>
     				<p>
     					Als Grundstruktur des Layouts wurde Grid verwendet, durch die Verwendung der Struktur auf allen drei Seiten entsteht eine einheitliche Optik.
+                        Damit die Tabelle des Wochenplaners in CSS besser gestyled und ein Overflow mit Scrollbalken eingerichtet werden kann, wurde um diese ein DIV-Element gespannt. Dies sorgt für einen äußeren Mantel, der die Tabelle im Griff behält.
     					Es wurden hierbei die Areas header, nav, main, aside und footer definiert. header beinhaltet ein Logo mit dem Titel der Anwendung, nav die Navigation zwischen den drei Seiten. Aside zeigt Zusatzinformationen wie beispielsweise einem Link zur FH-Seite an, der footer den Urheber der Website. Der Hauptinhalt der jeweiligen Seiten wird in der main-Area dargestellt.
     					Im oberen linken Teil der Anwendung wurde hierbei der header platziert, rechts davon der nav-Bereich.
     					In der Mitte der Website steht dann auf 2/3 der main-Inhalt, auf dem Rest die Zusatzinformationen der aside.
-    					Im unteren Teil wurde ein kleiner footer platziert.
+    					Im unteren Teil wurde ein kleiner footer platziert. All diese Elemente wurden über EJS-Templates eingebunden, dazu unter 3.2.1 mehr.
     				</p>
     			</section>
     			<section>
     				<h4>3.1.3 Responsivität</h4>
     				<p>
     					Für eine gute Responsivität wurde ein Breakpoint bei einer Breite des Fensters unter 768 Pixeln erstellt.
-    					Wenn diese Regel eintritt, werden Teile wie der header und der nav sowie der main und aside nicht mehr nebeneinander, sondern untereinander dargestellt. Dies ermöglicht eine bessere Navigation auch auf kleineren Displays.
+    					Wenn diese Regel eintritt, werden Teile wie der header und der nav sowie der main und aside nicht mehr nebeneinander, sondern untereinander dargestellt. Dies ermöglicht eine bessere Navigation auch auf kleineren Displays. Außerdem wird das Bild der Maus zu diesem Zeitpunkt ausgeblendet, da dies auf einem kleinen Bildschirm stören würde.
     				</p>
     			</section>
     		</section>
