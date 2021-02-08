@@ -4,4 +4,9 @@ Digitaler Wochenplan zur Erstellung einer Sammlung von Links, damit Grundschüle
 Als Backend dienen EJS und Node, als Datenhaltung zu Testzwecken Javascript.
 
 Funktionen ToDo:
-- Aside: Foto von Lehrer mit Kontaktmailadresse
+
+Aside: 
+Foto von Lehrer mit Kontaktmailadresse
+In DOC Port angegeben
+Modulstruktur: Templates beschreiben, wie diese eingefügt werden.
+Code kommentieren

@@ -44,7 +44,7 @@
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
         <script>
-            if(<%=zeile%>!=undefined){
+            if(<%=zeile%>!=undefined){ //Falls im Wochenplaner auf einen Tabellenplatz geklickt wurde, erhält die Website die Parameter "wochentag" und "slot". Anhand derer wird im Form anschließend der Wochentag und die Uhrzeit für den Slot vorausgewählt
                 document.getElementById("wochentag").value = <%=spalte%>;
                 document.getElementById("slot").value = <%=zeile%>;
             }

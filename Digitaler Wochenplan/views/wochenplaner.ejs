@@ -72,7 +72,7 @@
                     </tr>
                 </table>
             </div>
-            <form method="GET" action="neueAufgabe" id="zeilen/spalten">
+            <form method="GET" action="neueAufgabe" id="zeilen/spalten"> <!--Hidden Form-->
                 <input type="hidden" name="zeilennummer" id="zeilennummer">
                 <input type="hidden" name="spaltennummer" id="spaltennummer">
             </form>
@@ -80,7 +80,7 @@
         <%- include('./aside.ejs')%>
         <%- include('./footer.ejs')%>
         <script type="text/javascript">
-            function klickPosition(td, zeilennummer){
+            function klickPosition(td, zeilennummer){ //Funktion, um Zeilennummer und Spaltennummer bei Klick auf Wochenplan herauszukriegen und an /neueAufgabe zu übergeben. Am Ende werden die Nummern in das Hidden Form eingefügt und submittet
                 document.getElementById("zeilennummer").value = zeilennummer;
                 document.getElementById("spaltennummer").value = (td.cellIndex-1);
                 document.getElementById("zeilen/spalten").submit();

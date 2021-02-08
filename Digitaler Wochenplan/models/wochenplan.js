@@ -15,13 +15,15 @@ function Aufgabe(Name, Beschreibung, Link){
     this.Datum = Datum.getDate()+"."+(Datum.getMonth()+1)+"."+Datum.getFullYear();
 }
 
-function getWoche(){
+function getWoche(){   //Liefert Array, Wichtig für Wochenplan
 	return TageContainer;
 }
 
-function addAufgabe(Tag, Slot, Name, Beschreibung, Link){
+function addAufgabe(Tag, Slot, Name, Beschreibung, Link){ //Aufgabe einfügen, wichtig für Seite /neueAufgabe
 	TageContainer[Tag][Slot]= new Aufgabe(Name, Beschreibung, Link);
 }
+
+//Datenhaltung
 addAufgabe("0","0", "DigiKreis", "Unser Treffpunkt zum Start der Woche", "https://www.webex.com/de/test-meeting.html");
 addAufgabe("0","2", "Lesen", "Lesestunde", "https://www.zvab.com/Construction-Evolution-Code-Generators-Sven-J%C3%B6rges/13791160385/bd");
 addAufgabe("0","3", "Rechnen 1", "Das sehr große 1x1", "http://www.inf.fh-dortmund.de/personen/professoren/cleven/index.html");
@@ -35,7 +37,7 @@ addAufgabe("3","3", "Rechnen 2", "Das sehr große 1/1", "http://www.inf.fh-dortm
 addAufgabe("4","2", "Erzählen", "Erzähl von der Woche", "https://www.webex.com/de/test-meeting.html");
 addAufgabe("4","3", "Klassenrat", "Aktuelle Stunde", "https://amongusplay.online/");
 
-function getWochenTag(){
+function getWochenTag(){ //Montag, Samstag, Sonntag = 0, Dienstag = 1 ... Wichtig dafür, welcher Tag bei der Tagesansicht angezeigt wird
 	switch(new Date().getDay()){
 		case 0: 
 			return 0;
