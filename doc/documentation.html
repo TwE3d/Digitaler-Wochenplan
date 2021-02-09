@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Dokumentation</title>
+    <link rel="icon" href="../Digitaler Wochenplan/public/img/favicon.ico">
     <link rel="stylesheet" href="doc.css">
   </head>
   <body>
@@ -24,9 +25,9 @@
     		<section>
     			Zur Realisierung des Stundenplans wurde ein zweidimensionales Array erstellt. Die erste Ebene des Arrays repräsentiert hierbei die Tage. Pro Tag wird dann ein weiteres Array erstellt, welches die späteren Zeitslots darstellt. 
 
-    			In diesen Zeitslots wird dann ein über die Konstruktorfunktion Aufgabe erstelltes Objekt gespeichert. 
+    			In diesen Zeitslots wird dann ein über die Konstruktor-Funktion Aufgabe erstelltes Objekt gespeichert. 
 
-    			Die Konstruktorfunktion Aufgabe besitzt 4 Attribute, wobei die folgenden Drei als übergebener Parameter erwartet werden.
+    			Die Konstruktorfunktion Aufgabe besitzt vier Attribute, wobei die folgenden Drei als übergebener Parameter erwartet werden.
     			Der Name der Aufgabe, die Beschreibung und ein Link, welcher beispielsweise zu einem Webex-Raum oder einem Lernvideo führt.
     			Das vierte Attribut, Datum, wird auf das aktuelle Datum gesetzt, an welchem die Aufgabe erstellt wurde.
 
@@ -58,7 +59,7 @@
                         Damit die Tabelle des Wochenplaners in CSS besser gestyled und ein Overflow mit Scrollbalken eingerichtet werden kann, wurde um diese ein DIV-Element gespannt. Dies sorgt für einen äußeren Mantel, der die Tabelle im Griff behält.
     					Es wurden hierbei die Areas header, nav, main, aside und footer definiert. header beinhaltet ein Logo mit dem Titel der Anwendung, nav die Navigation zwischen den drei Seiten. Aside zeigt Zusatzinformationen wie beispielsweise einem Link zur FH-Seite an, der footer den Urheber der Website. Der Hauptinhalt der jeweiligen Seiten wird in der main-Area dargestellt.
     					Im oberen linken Teil der Anwendung wurde hierbei der header platziert, rechts davon der nav-Bereich.
-    					In der Mitte der Website steht dann auf 2/3 der main-Inhalt, auf dem Rest die Zusatzinformationen der aside.
+    					In der Mitte der Website steht auf 2/3 der main-Inhalt, auf dem Rest die Zusatzinformationen der aside.
     					Im unteren Teil wurde ein kleiner footer platziert. All diese Elemente wurden über EJS-Templates eingebunden, dazu unter 3.2.1 mehr.
     				</p>
     			</section>
@@ -115,7 +116,7 @@
                             </tr>
                         </table>
                     <p>
-                        Die Landing-Page zeigt den Wochenplan an. Übergeben wird ihr das zweidimensionales Array zur Datenhaltung, welches die Woche aus Aufgaben widerspiegelt.
+                        Die Landing-Page zeigt den Wochenplan an. Übergeben wird ihr das zweidimensionale Array zur Datenhaltung, welches die Woche aus Aufgaben widerspiegelt.
                         Falls im Wochenplan auf ein leeres Feld geklickt wird, wird über ein clientseitiges Javascript die Zeilen- und Spaltennummer ausgelesen, welche dann in ein hidden-Form eingefügt und als GET an /neueAufgabe verschickt wird. 
                         Die Seite /neueAufgabe erhält wie bereits erwähnt die beiden Parameter "Zeile" und "Spalte". Dies dient dazu, dass beim Klick auf ein leeres Feld im Wochenplan der Zeitslot bereits im Form vorausgewählt wird. Falls auf die Seite jedoch über den nav-Bereich zugegriffen wird, ist Standardweise "Montag" um "8:30 Uhr" ausgewählt. Nachdem das Form ausgefüllt und abgeschickt wird, wird eine POST-Anfrage auf die aktuelle Seite gesendet. Die Daten aus dem Form werden anschließend von express ausgelesen und in die Datenhaltung über die Funktion addAufgabe eingefügt. Im Anschluss geschieht ein Redirect auf die Landing-Page.
                         Die dritte Seite Tagesplan ist ebenfalls per GET erreichbar. Ihr übergeben wird der Wochenplan[][] und der aktuelle Tag als Zahl, damit nur die Aufgaben des aktuellen Tags angezeigt werden.
@@ -131,7 +132,7 @@
     		<section>
                     <p>
                         Für den Start der Anwendung muss ins Verzeichnis "Digitaler Wochenplan" node gestartet werden und per ".load server.js" der Server gestartet werden. 
-                        Für den Zugriff muss im Browser dann auf die Adresse "http://localhost:8040" zugreifen und die Anwendung nutzen.
+                        Für den Zugriff muss im Browser dann auf die Adresse "http://localhost:8040" zugegriffen werden und die Anwendung steht bereit zur Nutzung.
                         Es liegt ein Initialdatenbestand vor, damit eine grobe Funktionalität sichtbar ist.
                     </p>      
             </section>

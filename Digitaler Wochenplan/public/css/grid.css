@@ -112,7 +112,6 @@ table tr th{
 
 table td:hover{
 	background-color:#ff7b25;
-	border-width: 2px;
 }
 
 fieldset{
@@ -134,7 +133,7 @@ fieldset{
 }
 
 #tableWrapper a:hover{
-    cursor: url("../img/Magnifier.cur"), pointer;
+    cursor: url("../img/magnifier.cur"), wait;
 }
 
 #tagesplan{
@@ -149,4 +148,8 @@ fieldset{
 #asideAr{
 	height: 95%;
 	width: 85%;
+}
+
+#submit{
+	margin-top: 40px;
 }
